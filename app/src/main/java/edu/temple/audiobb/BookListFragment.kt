@@ -14,12 +14,12 @@ private const val BOOK_KEY = "books"
 
 class BookListFragment : Fragment() {
 
-    private lateinit var list : Array<Book>
+    private lateinit var list : ArrayList<Book>
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         arguments?.let {
-            list = it.getParcelableArray(BOOK_KEY) as Array<Book>
+            list = it.getParcelableArrayList<Book>(BOOK_KEY) as ArrayList<Book>
         }
     }
 
@@ -37,16 +37,16 @@ class BookListFragment : Fragment() {
             itemViewModel.setItem(list[position])
         }
 
-        recyclerView.adapter = BookAdapter(list, onClickListener)
+        //recyclerView.adapter = BookAdapter(list, onClickListener)
 
         return layout
     }
 
     companion object {
-        fun newInstance(list: Array<Book>) =
+        fun newInstance(list: ArrayList<Book>) =
             BookListFragment().apply {
                 arguments = Bundle().apply {
-                   putParcelableArray(BOOK_KEY, list)
+                   putParcelableArrayList(BOOK_KEY, list)
                 }
             }
     }
