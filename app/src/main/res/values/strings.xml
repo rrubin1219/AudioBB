@@ -1,4 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">AudioBB</string>
-    <!-- TODO: Remove or change this placeholder text -->
+    <string-array name="titles">
+        <item>1984</item>
+        <item>A Tale of Two Cities</item>
+        <item>Charlotte Web</item>
+        <item>Fahrenheit 451</item>
+        <item>Frankenstein</item>
+        <item>To Kill a MockingBird</item>
+        <item>Little Women</item>
+        <item>Of Mice and Men</item>
+        <item>Romeo and Juliet</item>
+        <item>Sense and Sensibility</item>
+    </string-array>
+    <string-array name="authors">
+        <item>George Orwell</item>
+        <item>Charles Dickens</item>
+        <item>E.B White</item>
+        <item>Ray Bradbury</item>
+        <item>Mary Shelley</item>
+        <item>Harper Lee</item>
+        <item>Louisa May Alcott</item>
+        <item>John Steinbeck</item>
+        <item>William Shakespeare</item>
+        <item>Jane Austen</item>
+    </string-array>
 </resources>

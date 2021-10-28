@@ -31,12 +31,13 @@ class BookListFragment : Fragment() {
         recyclerView.layoutManager = LinearLayoutManager(requireContext())
 
         val itemViewModel = ViewModelProvider(requireActivity()).get(ItemViewModel::class.java)
+
         val onClickListener = View.OnClickListener {
             val position = recyclerView.getChildAdapterPosition(it)
             itemViewModel.setItem(list[position])
         }
 
-        //recyclerView.adapter = BookAdapter(list, onClickListener)
+        recyclerView.adapter = BookAdapter(list, onClickListener)
 
         return layout
     }
