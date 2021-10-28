@@ -3,7 +3,7 @@ package edu.temple.audiobb
 import android.os.Parcel
 import android.os.Parcelable
 
-class Book(val title: String, val author: String): Parcelable {
+data class Book(val title: String, val author: String): Parcelable {
     constructor(parcel: Parcel) : this(
         parcel.readString().toString(),
         parcel.readString().toString()
