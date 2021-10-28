@@ -1,4 +1,17 @@
 package edu.temple.audiobb
 
-class BookList {
+class BookList{
+    private val list = ArrayList<Book>()
+    fun add(book: Book){
+        list.add(book)
+    }
+    fun remove(book: Book){
+        list.remove(book)
+    }
+    fun get(pos: Int): Book{
+        return list[pos]
+    }
+    fun size(): Int{
+        return list.size
+    }
 }
