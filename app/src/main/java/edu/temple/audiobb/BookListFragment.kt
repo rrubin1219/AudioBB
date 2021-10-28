@@ -9,6 +9,7 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 
+//List Fragment for the Book Object
 private const val BOOK_KEY = "books"
 
 class BookListFragment : Fragment() {
