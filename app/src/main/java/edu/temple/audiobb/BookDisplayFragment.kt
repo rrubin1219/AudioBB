@@ -26,4 +26,5 @@ class BookDisplayFragment : Fragment() {
             })
         return layout
     }
+
 }

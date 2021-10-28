@@ -15,6 +15,7 @@ private const val BOOK_KEY = "books"
 class BookListFragment : Fragment() {
 
     private lateinit var list : ArrayList<Book>
+    private lateinit var recyclerView: RecyclerView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -27,27 +28,29 @@ class BookListFragment : Fragment() {
         // Inflate the layout for this fragment
         val layout = inflater.inflate(R.layout.fragment_book_list, container, false)
 
-        val recyclerView = layout.findViewById<RecyclerView>(R.id.recyclerView)
-        recyclerView.layoutManager = LinearLayoutManager(requireContext())
-
         val itemViewModel = ViewModelProvider(requireActivity()).get(ItemViewModel::class.java)
 
         val onClickListener = View.OnClickListener {
             val position = recyclerView.getChildAdapterPosition(it)
             itemViewModel.setItem(list[position])
         }
-
-        //recyclerView.adapter = BookAdapter(list, onClickListener)
+        recyclerView = layout.findViewById<RecyclerView>(R.id.recyclerView).apply {
+            layoutManager = LinearLayoutManager(requireContext())
+            //adapter = BookAdapter(list, onClickListener)
+        }
 
         return layout
     }
 
     companion object {
-        fun newInstance(list: ArrayList<Book>) =
-            BookListFragment().apply {
-                arguments = Bundle().apply {
-                   putParcelableArrayList(BOOK_KEY, list)
-                }
+        fun newInstance(list: ArrayList<Book>) = BookListFragment().apply {
+            arguments = Bundle().apply {
+                putParcelableArrayList(BOOK_KEY, list)
             }
+        }
+    }
+
+    interface SwitchEvent{
+        fun selctionMode()
     }
 }
