@@ -16,7 +16,7 @@ class MainActivity : AppCompatActivity(), BookListFragment.SwitchEvent {
         twoPane = findViewById<View>(R.id.displayContainer) != null
         itemViewModel = ViewModelProvider(this).get(ItemViewModel::class.java)
 
-        //Pop display frag from stack if book was preivously selected, but user had since cleared selection
+        //Pop display frag from stack if book was previously selected, but user had since cleared selection
         if (supportFragmentManager.findFragmentById(R.id.displayContainer) is BookDisplayFragment && itemViewModel.getItem().value == null){
             supportFragmentManager.popBackStack()
         }
@@ -73,16 +73,12 @@ class MainActivity : AppCompatActivity(), BookListFragment.SwitchEvent {
     }
 
 
-    override fun selctionMode() {
+    override fun selectionMode() {
         if(!twoPane){
             supportFragmentManager.beginTransaction()
                 .add(R.id.displayContainer, BookDisplayFragment())
                 .addToBackStack(null)
                 .commit()
         }
-    }
-
-    override fun onBackPressed() {
-        super.onBackPressed()
     }
 }

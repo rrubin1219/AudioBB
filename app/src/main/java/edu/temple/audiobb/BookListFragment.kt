@@ -36,7 +36,7 @@ class BookListFragment : Fragment() {
         }
         recyclerView = layout.findViewById<RecyclerView>(R.id.recyclerView).apply {
             layoutManager = LinearLayoutManager(requireContext())
-            //adapter = BookAdapter(list, onClickListener)
+            adapter = BookAdapter(list, onClickListener)
         }
 
         return layout
@@ -51,6 +51,6 @@ class BookListFragment : Fragment() {
     }
 
     interface SwitchEvent{
-        fun selctionMode()
+        fun selectionMode()
     }
 }
